@@ -18,7 +18,7 @@ class ProductManager {
     }
    let producto = { title,descripcion,price,thumbnail,stock,id }
    this.product.push(producto)
-    //console.log(this.product)
+    
   }
 
   getProductById(id) {
