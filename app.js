@@ -2,12 +2,12 @@ class ProductManager {
   constructor() {
     this.product = []
   }
-
+//devuelvo el array con sus elementos
    getProduct() {
     console.log(this.product)
     return this.product
    }
-
+//agrego producto al array vacio/id automatico e incrementable
   addProduct({ title,descripcion,price,thumbnail,stock }) {
     let id 
     if(this.product.length===0) {
@@ -18,7 +18,16 @@ class ProductManager {
     }
    let producto = { title,descripcion,price,thumbnail,stock,id }
    this.product.push(producto)
-    //console.log(this.product)
+    
+  }
+//busco el producto que coincide con el id
+  getProductById(id) {
+    let buscarId = this.product.find(producto => producto.id===id)
+    if(buscarId) {
+console.log(buscarId)
+    }else {
+console.log('not found')
+    }
   }
 
   getProductById(id) {
