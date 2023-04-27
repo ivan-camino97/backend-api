@@ -22,6 +22,7 @@ class ProductManager {
              return 'data recovered'
          }
            }  
+           //agrega los productos al array vacio del archivo
    async addProduct ({ title,description,price,thumbnail,stock }) {
     try{
         let id 
@@ -41,6 +42,7 @@ class ProductManager {
         console.log('addProduct error')
     }
     }
+    //devuelve el array con todos los productos guardados
     getProduct () {
      console.log(this.product)
      
@@ -49,6 +51,7 @@ class ProductManager {
      }
      return this.product
     }
+    //devuelve un objeto con todas las prop del producto mediante el id
     getProductById (id) {
   let zapatillas = this.product.find(producto=>producto.id===id) 
   console.log(zapatillas)
@@ -58,6 +61,7 @@ console.log(zapatillas)
 console.log('getProductById error')
   }
     }
+    //modifica propiedades mediante los parametros id,data
    async upDateProduct(id,data) {
     try{
         let prod = this.getProductById(id)
@@ -74,6 +78,7 @@ console.log('getProductById error')
          console.log('upDateProduct: error')
        } 
     }
+    //elimina producto del archivo
 async deleteProduct(id) {
     try {
         this.product = this.product.filter(each=>each.id!==id)
